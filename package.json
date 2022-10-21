@@ -38,7 +38,7 @@
     "*": [
       "prettier --write --cache --ignore-unknown"
     ],
-    "src/**/*.{js,ts,jsx,tsx,vue}": [
+    "src/**/*.{ts,tsx,vue}": [
       "eslint --cache --fix"
     ]
   }
