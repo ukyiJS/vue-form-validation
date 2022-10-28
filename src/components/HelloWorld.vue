@@ -12,8 +12,11 @@ const count = ref(0);
   </section>
 </template>
 
-<style>
+<style lang="postcss">
 [hello-world] {
   @apply flex justify-center items-center;
+  h1 {
+    @apply text-3xl;
+  }
 }
 </style>
