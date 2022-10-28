@@ -1,96 +1,92 @@
-const { defineConfig } = require("eslint-define-config");
+const { defineConfig } = require('eslint-define-config');
 
 module.exports = defineConfig({
   root: true,
   globals: {
     module: true,
     require: true,
+    process: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:vue/vue3-recommended",
-  ],
-  plugins: ["import"],
-  parser: "vue-eslint-parser",
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/typescript', 'plugin:vue/vue3-recommended'],
+  plugins: ['import'],
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: "@typescript-eslint/parser",
-    sourceType: "module",
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
     ecmaVersion: 2021,
   },
   rules: {
     eqeqeq: [
-      "warn",
-      "always",
+      'warn',
+      'always',
       {
-        null: "never",
+        null: 'never',
       },
     ],
-    "no-debugger": ["error"],
-    "no-empty": [
-      "warn",
+    'no-debugger': ['error'],
+    'no-empty': [
+      'warn',
       {
         allowEmptyCatch: true,
       },
     ],
-    "no-process-exit": "off",
-    "no-useless-escape": "off",
-    "no-var": "error",
-    "no-tabs": "error",
-    "no-trailing-spaces": [
-      "error",
+    'no-process-exit': 'off',
+    'no-useless-escape': 'off',
+    'no-var': 'error',
+    'no-tabs': 'error',
+    'no-trailing-spaces': [
+      'error',
       {
         skipBlankLines: false,
         ignoreComments: false,
       },
     ],
-    "no-multi-spaces": "error",
-    "arrow-spacing": "error",
-    "keyword-spacing": "error",
-    "block-spacing": "error",
-    "array-bracket-spacing": "error",
-    "space-before-blocks": "error",
-    "space-in-parens": ["error", "never"],
-    "no-spaced-func": "error",
-    "space-before-function-paren": [
-      "error",
+    'no-multi-spaces': 'error',
+    'arrow-spacing': 'error',
+    'keyword-spacing': 'error',
+    'block-spacing': 'error',
+    'array-bracket-spacing': 'error',
+    'space-before-blocks': 'error',
+    'space-in-parens': ['error', 'never'],
+    'no-spaced-func': 'error',
+    'space-before-function-paren': [
+      'error',
       {
-        anonymous: "never",
-        named: "never",
-        asyncArrow: "always",
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
       },
     ],
-    "no-regex-spaces": "error",
-    "no-whitespace-before-property": "error",
-    "spaced-comment": [
-      "error",
-      "always",
+    'no-regex-spaces': 'error',
+    'no-whitespace-before-property': 'error',
+    'spaced-comment': [
+      'error',
+      'always',
       {
         line: {
-          exceptions: ["-", "+"],
-          markers: ["=", "!", "/"],
+          exceptions: ['-', '+'],
+          markers: ['=', '!', '/'],
         },
         block: {
-          exceptions: ["-", "+"],
-          markers: ["=", "!", ":", "::"],
+          exceptions: ['-', '+'],
+          markers: ['=', '!', ':', '::'],
           balanced: true,
         },
       },
     ],
-    "space-infix-ops": "error",
-    "space-unary-ops": [
-      "error",
+    'space-infix-ops': 'error',
+    'space-unary-ops': [
+      'error',
       {
         words: true,
         nonwords: false,
         overrides: {},
       },
     ],
-    "nonblock-statement-body-position": ["error", "beside"],
-    "object-curly-spacing": ["error", "always"],
-    "object-curly-newline": [
-      "error",
+    'nonblock-statement-body-position': ['error', 'beside'],
+    'object-curly-spacing': ['error', 'always'],
+    'object-curly-newline': [
+      'error',
       {
         ObjectExpression: {
           minProperties: 4,
@@ -110,174 +106,174 @@ module.exports = defineConfig({
         },
       },
     ],
-    "object-property-newline": [
-      "error",
+    'object-property-newline': [
+      'error',
       {
         allowAllPropertiesOnSameLine: true,
       },
     ],
-    "template-tag-spacing": "error",
-    "template-curly-spacing": "error",
-    "switch-colon-spacing": [
-      "error",
+    'template-tag-spacing': 'error',
+    'template-curly-spacing': 'error',
+    'switch-colon-spacing': [
+      'error',
       {
         after: true,
         before: false,
       },
     ],
-    "no-multiple-empty-lines": [
-      "error",
+    'no-multiple-empty-lines': [
+      'error',
       {
         max: 1,
         maxBOF: 0,
         maxEOF: 0,
       },
     ],
-    "no-lonely-if": "error",
-    "no-mixed-operators": [
-      "error",
+    'no-lonely-if': 'error',
+    'no-mixed-operators': [
+      'error',
       {
         groups: [
-          ["%", "**"],
-          ["%", "+"],
-          ["%", "-"],
-          ["%", "*"],
-          ["%", "/"],
-          ["/", "*"],
-          ["&", "|", "<<", ">>", ">>>"],
-          ["==", "!=", "===", "!=="],
-          ["&&", "||"],
+          ['%', '**'],
+          ['%', '+'],
+          ['%', '-'],
+          ['%', '*'],
+          ['%', '/'],
+          ['/', '*'],
+          ['&', '|', '<<', '>>', '>>>'],
+          ['==', '!=', '===', '!=='],
+          ['&&', '||'],
         ],
         allowSamePrecedence: false,
       },
     ],
-    "comma-spacing": [
-      "error",
+    'comma-spacing': [
+      'error',
       {
         before: false,
         after: true,
       },
     ],
-    "comma-dangle": [
-      "error",
+    'comma-dangle': [
+      'error',
       {
-        arrays: "always-multiline",
-        objects: "always-multiline",
-        imports: "always-multiline",
-        exports: "always-multiline",
-        functions: "always-multiline",
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
       },
     ],
-    "brace-style": [
-      "error",
-      "1tbs",
+    'brace-style': [
+      'error',
+      '1tbs',
       {
         allowSingleLine: true,
       },
     ],
-    "newline-per-chained-call": [
-      "error",
+    'newline-per-chained-call': [
+      'error',
       {
         ignoreChainWithDepth: 4,
       },
     ],
-    "linebreak-style": ["error", "unix"],
-    "arrow-parens": ["error", "as-needed"],
-    "arrow-body-style": ["error", "as-needed"],
-    "prefer-object-spread": "error",
-    "prefer-exponentiation-operator": "error",
-    "prefer-const": [
-      "warn",
+    'linebreak-style': ['error', 'unix'],
+    'arrow-parens': ['error', 'as-needed'],
+    'arrow-body-style': ['error', 'as-needed'],
+    'prefer-object-spread': 'error',
+    'prefer-exponentiation-operator': 'error',
+    'prefer-const': [
+      'warn',
       {
-        destructuring: "all",
+        destructuring: 'all',
       },
     ],
-    "operator-linebreak": [
-      "error",
-      "before",
+    'operator-linebreak': [
+      'error',
+      'before',
       {
-        overrides: { "=": "none" },
+        overrides: { '=': 'none' },
       },
     ],
-    "operator-assignment": ["error", "always"],
-    "one-var-declaration-per-line": ["error", "always"],
-    semi: "error",
-    "semi-style": "error",
+    'operator-assignment': ['error', 'always'],
+    'one-var-declaration-per-line': ['error', 'always'],
+    semi: 'error',
+    'semi-style': 'error',
     quotes: [
-      "error",
-      "single",
+      'error',
+      'single',
       {
         avoidEscape: true,
       },
     ],
-    "prefer-template": "error",
-    "@typescript-eslint/explicit-module-boundary-types": [
-      "error",
+    'prefer-template': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': [
+      'error',
       {
         allowArgumentsExplicitlyTypedAsAny: true,
       },
     ],
-    "@typescript-eslint/no-empty-function": [
-      "error",
+    '@typescript-eslint/no-empty-function': [
+      'error',
       {
-        allow: ["arrowFunctions"],
+        allow: ['arrowFunctions'],
       },
     ],
-    "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/consistent-type-imports": [
-      "error",
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
       {
-        prefer: "type-imports",
+        prefer: 'type-imports',
       },
     ],
-    "import/no-duplicates": "error",
-    "import/newline-after-import": "error",
-    "import/order": [
-      "error",
+    'import/no-duplicates': 'error',
+    'import/newline-after-import': 'error',
+    'import/order': [
+      'error',
       {
-        groups: ["builtin", "external", ["parent", "sibling"], "index"],
+        groups: ['builtin', 'external', ['parent', 'sibling'], 'index'],
         pathGroups: [
           {
-            pattern: "@/**",
-            group: "external",
-            position: "after",
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
           },
         ],
         alphabetize: {
-          order: "asc",
+          order: 'asc',
           caseInsensitive: true,
         },
-        "newlines-between": "never",
+        'newlines-between': 'never',
       },
     ],
-    "sort-imports": [
-      "error",
+    'sort-imports': [
+      'error',
       {
         ignoreCase: true,
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
         allowSeparatedGroups: false,
       },
     ],
-    "vue/html-self-closing": [
-      "error",
+    'vue/html-self-closing': [
+      'error',
       {
         html: {
-          void: "always",
-          normal: "always",
-          component: "always",
+          void: 'always',
+          normal: 'always',
+          component: 'always',
         },
-        svg: "always",
-        math: "always",
+        svg: 'always',
+        math: 'always',
       },
     ],
-    "vue/max-attributes-per-line": [
-      "error",
+    'vue/max-attributes-per-line': [
+      'error',
       {
         singleline: {
           max: 10,
