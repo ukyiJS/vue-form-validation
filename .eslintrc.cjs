@@ -2,6 +2,10 @@ const { defineConfig } = require("eslint-define-config");
 
 module.exports = defineConfig({
   root: true,
+  globals: {
+    module: true,
+    require: true,
+  },
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
